@@ -14,7 +14,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
-Provides:	libsigc++
+Provides:	libsigc++ = %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libsigc++-examples
 Obsoletes:	libsigc++ < 1.1
@@ -45,7 +45,7 @@ Summary(pl):	Narzêdzia programistyczne do ¶rodowiska libsig++
 Group:		Development/Libraries
 Requires:	m4
 Requires:	%{name} = %{version}
-Provides:	libsigc++-devel
+Provides:	libsigc++-devel = %{version}
 Obsoletes:	libsigc++-devel < 1.1
 
 %description devel
@@ -60,7 +60,7 @@ Summary:	Static Typesafe Signal Framework for C++ libraries
 Summary(pl):	Statyczna biblioteka libsigc++
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
-Provides:	libsigc++-static
+Provides:	libsigc++-static = %{version}
 Obsoletes:	libsigc++-static < 1.1
 
 %description static
