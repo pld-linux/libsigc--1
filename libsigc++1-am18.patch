@@ -1,0 +1,11 @@
+--- libsigc++-1.0.4/sigc++.m4.orig	Sun Jun 10 23:34:43 2001
++++ libsigc++-1.0.4/sigc++.m4	Mon Dec 22 14:52:02 2003
+@@ -5,7 +5,7 @@
+ dnl   to be used as follows:
+ dnl AM_PATH_SIGC(MINIMUM-VERSION, [ACTION-IF-FOUND [, ACTION-IF-NOT-FOUND]])
+ dnl
+-AC_DEFUN(AM_PATH_SIGC,
++AC_DEFUN([AM_PATH_SIGC],
+ [dnl 
+ dnl Get the cflags and libraries from the sigc-config script
+ dnl
