@@ -2,19 +2,20 @@ Summary:	The Typesafe Signal Framework for C++
 Summary(pl):	¦rodowisko sygna³ów z kontrol± typów dla C++
 Name:		libsigc++1
 Version:	1.0.4
-Release:	6
+Release:	7
 License:	LGPL
 Vendor:		Karl E. Nelson <kenelson@ece.ucdavis.edu>
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libsigc/libsigc++-%{version}.tar.gz
 # Source0-md5:	88d34840acc1cc5d47b347726e4a09e0
-Patch0:		libsigc++-remove_stupid_install-data-hook_targets.patch
+Patch0:		%{name}-remove_stupid_install-data-hook_targets.patch
 Patch1:		%{name}-ac25x.patch
+Patch2:		%{name}-link.patch
 URL:		http://libsigc.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:1.4d
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libsigc++-examples
 Obsoletes:	libsigc++ < 1.1
@@ -43,8 +44,9 @@ callbacków.
 Summary:	Development tools for the Typesafe Signal Framework for C++
 Summary(pl):	Narzêdzia programistyczne do ¶rodowiska libsig++
 Group:		Development/Libraries
-Requires:	m4
 Requires:	%{name} = %{version}
+Requires:	libstdc++-devel
+Requires:	m4
 Obsoletes:	libsigc++-devel < 1.1
 
 %description devel
@@ -71,10 +73,10 @@ Statyczna biblioteka libsigc++ - ¶rodowiska sygna³ów z kontrol± typów.
 %setup -q -n libsigc++-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 CXXFLAGS="%{rpmcflags} -fno-exceptions"
-rm -f scripts/missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -85,11 +87,12 @@ rm -f scripts/missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	m4datadir=%{_aclocaldir}
 
-mv -f $RPM_BUILD_ROOT%{_aclocaldir}/sigc++.m4 $RPM_BUILD_ROOT%{_aclocaldir}/sigc++1.m4
+mv -f $RPM_BUILD_ROOT%{_aclocaldir}/{sigc++.m4,sigc++1.m4}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
