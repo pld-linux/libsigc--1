@@ -2,7 +2,7 @@ Summary:	The Typesafe Signal Framework for C++
 Summary(pl):	¦rodowisko sygna³ów z kontrol± typów dla C++
 Name:		libsigc++1
 Version:	1.0.4
-Release:	2
+Release:	3
 License:	LGPL
 Vendor:		Karl E. Nelson <kenelson@ece.ucdavis.edu>
 Group:		Libraries
@@ -87,8 +87,6 @@ rm -rf $RPM_BUILD_ROOT
 
 mv -f $RPM_BUILD_ROOT%{_aclocaldir}/sigc++.m4 $RPM_BUILD_ROOT%{_aclocaldir}/sigc++1.m4
 
-gzip -9nf AUTHORS README IDEAS NEWS ChangeLog TODO doc/*
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -101,7 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc *.gz doc/*
+%doc AUTHORS README IDEAS NEWS ChangeLog TODO doc/*
 %attr(755,root,root) %{_bindir}/sigc-config
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
