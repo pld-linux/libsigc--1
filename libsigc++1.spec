@@ -7,6 +7,7 @@ License:	LGPL
 Vendor:		Karl E. Nelson <kenelson@ece.ucdavis.edu>
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libsigc/libsigc++-%{version}.tar.gz
+# Source0-md5:	88d34840acc1cc5d47b347726e4a09e0
 Patch0:		libsigc++-remove_stupid_install-data-hook_targets.patch
 Patch1:		%{name}-ac25x.patch
 URL:		http://libsigc.sourceforge.net/
