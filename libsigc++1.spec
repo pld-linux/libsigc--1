@@ -83,7 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	m4datadir=%{_aclocaldir}
 
-mv $RPM_BUILD_ROOT%{_aclocaldir}/sigc++.m4 $RPM_BUILD_ROOT%{_aclocaldir}/sigc++1.m4 
+mv $RPM_BUILD_ROOT%{_aclocaldir}/sigc++.m4 $RPM_BUILD_ROOT%{_aclocaldir}/sigc++1.m4
 
 gzip -9nf AUTHORS README IDEAS NEWS ChangeLog TODO doc/*
 
