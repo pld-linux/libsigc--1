@@ -105,7 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README IDEAS NEWS ChangeLog TODO doc/*
 %attr(755,root,root) %{_bindir}/sigc-config
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/lib*.la
+%{_libdir}/lib*.la
 %{_includedir}/sigc++-*
 %{_libdir}/sigc++-*
 %{_aclocaldir}/*
