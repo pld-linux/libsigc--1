@@ -1,0 +1,11 @@
+--- libsigc++-1.0.4/configure.in.orig	Mon Oct 22 04:02:46 2001
++++ libsigc++-1.0.4/configure.in	Sat Apr 27 16:04:27 2002
+@@ -91,6 +91,8 @@
+ 	DLL_DEFINE=-DLIBSIGC_EXPORTS
+ 	AC_SUBST(DLL_DEFINE)
+ 	AM_CONDITIONAL(SIGCRC,test x=x)	
++else
++	AM_CONDITIONAL(SIGCRC,false)
+ fi
+ 
+ dnl On FreeBSD 3.0 (and perhaps some other systems) GNU m4 is
