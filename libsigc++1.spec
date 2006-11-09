@@ -4,7 +4,6 @@ Name:		libsigc++1
 Version:	1.0.4
 Release:	8
 License:	LGPL
-Vendor:		Karl E. Nelson <kenelson@ece.ucdavis.edu>
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libsigc/libsigc++-%{version}.tar.gz
 # Source0-md5:	88d34840acc1cc5d47b347726e4a09e0
@@ -17,9 +16,9 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Obsoletes:	libsigc++-examples
 Obsoletes:	libsigc++ < 1.1
+Obsoletes:	libsigc++-examples
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This library implements a full callback system for use in widget
@@ -45,7 +44,7 @@ callbacków.
 Summary:	Development tools for the Typesafe Signal Framework for C++
 Summary(pl):	Narzêdzia programistyczne do ¶rodowiska libsig++
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
 Requires:	m4
 Obsoletes:	libsigc++-devel < 1.1
@@ -61,7 +60,7 @@ kontrol± typów.
 Summary:	Static Typesafe Signal Framework for C++ libraries
 Summary(pl):	Statyczna biblioteka libsigc++
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libsigc++-static < 1.1
 
 %description static
